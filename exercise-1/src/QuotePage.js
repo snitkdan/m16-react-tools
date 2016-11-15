@@ -25,7 +25,7 @@ var QuotePage = React.createClass({
 		return (
 			<div className="quotePage">
 				<div>
-					<p className="instructions">Iterate through <code>this.state.quotes</code>, and create a new <code>Quote</code> component for each one</p>
+					{this.state.quotes.map((d,i) => <Quote key={'quote-' + i} text={d.text} author={d.author} url={d.url} />)}
 				</div>
 			</div>
 		);
@@ -33,3 +33,5 @@ var QuotePage = React.createClass({
 });
 
 export default QuotePage;
+{/* <blockquote><em>{this.props.text}</em></blockquote>
+<a target="_blank" href={this.props.url}>- {this.props.author}</a> */}
